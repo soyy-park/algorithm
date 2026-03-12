@@ -1,17 +1,22 @@
 import sys
-sys.stdin = open('input.txt')
+sys.stdin = open('./input.txt')
 
 H, W = map(int, input().split())
 height = list(map(int, input().split()))
 
-rain = 0
-for h in range(H):
+total = 0
+for h in range(1, H+1):
+    rain = 0
+    start = 0  # End
     for x in height:
+        # 블럭
         if x >= h:
-            if flag != 'b':     # block
-                rain += tmp
-                tmp = 0
-                flag = 'b'
+            start = 1
+            if rain:
+                total += rain
+                rain = 0
+        # 비
         else:
-            if flag == 'e':     # empty
-                tmp += 1
+            if start:
+                rain += 1
+print(total)
