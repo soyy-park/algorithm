@@ -19,4 +19,8 @@ for h in range(1, H+1):
         else:
             if start:
                 rain += 1
+<<<<<<< Updated upstream
 print(total)
+=======
+print(total)
+>>>>>>> Stashed changes
